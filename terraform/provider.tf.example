@@ -1,0 +1,26 @@
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+      version = "0.99.0"
+    }
+  }
+}
+
+provider "yandex" {
+  token     = "<YOUR_TOKEN>"
+  cloud_id  = "<YOUR_CLOUD_ID>"
+  folder_id = "<YOUR_FOLDER_ID>"
+  zone      = "ru-central1-a"
+}
+
+# Настройки для Object Storage
+provider "yandex" {
+  alias = "storage"
+  token     = "<YOUR_TOKEN>"
+  cloud_id  = "<YOUR_CLOUD_ID>"
+  folder_id = "<YOUR_FOLDER_ID>"
+  zone      = "ru-central1-a"
+  storage_access_key = "<YOUR_ACCESS_KEY>"
+  storage_secret_key = "<YOUR_SECRET_KEY>"
+}
